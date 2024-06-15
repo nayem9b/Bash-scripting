@@ -103,11 +103,16 @@ file_names=$(ls)
 
 #subshell
 
-(
-    cd class-1
-    touch intro.txt
-    pwd
-    echo $$ #process id
-)
+# (
+#     cd class-1
+#     touch intro.txt
+#     pwd
+#     echo $$ #process id
+# )
 
-pwd
+# pwd
+
+build_docker_image()
+{
+    
+}
