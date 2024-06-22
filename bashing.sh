@@ -118,21 +118,49 @@
 
 
 #switch case statement
-echo "1. Show current directory"
-echo "2. Show date"
-echo "Enter other number to exit: "
+# echo "1. Show current directory"
+# echo "2. Show date"
+# echo "Enter other number to exit: "
 
-read variable
+# read variable
 
-case $variable in
-    1)
-    ls
-    ;;
-    2)
-    date
-    ;;
-    *)
-    echo "Invalid choice"
-    exit
-    ;;
-esac
+# case $variable in
+#     1)
+#     ls
+#     ;;
+#     2)
+#     date
+#     ;;
+#     *)
+#     echo "Invalid choice"
+#     exit
+#     ;;
+# esac
+
+
+# subshell
+
+# curr_work_dir=$(ls)
+# echo "$curr_work_dir"
+# parent_pid=$$
+
+# (
+#     sub_pid=$BASHPID
+#     echo "$sub_pid"
+#     cd devops
+#     pwd
+#     ls -l
+# )
+# echo "================"
+# echo "$parent_pid"
+# pwd
+
+age=25
+
+(
+    age=$((age+3))
+    echo $age > age.txt
+)
+
+age=$(cat age.txt)
+echo $age
