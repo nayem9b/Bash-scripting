@@ -165,7 +165,7 @@
 # age=$(cat age.txt)
 # echo $age
 
-names=("Dhaka" "Khulna" "Rangpur" "Sylhet")
+# names=("Dhaka" "Khulna" "Rangpur" "Sylhet")
 # echo ${names[@]}
 # names[4]="Rajshahi"
 # echo ${names[@]}
@@ -175,13 +175,54 @@ names=("Dhaka" "Khulna" "Rangpur" "Sylhet")
 #     echo $name
 # done
 
-echo ${#names[@]} #length of an array
+# echo ${#names[@]} #length of an array
 
-names[${#names[@]}]="Barishal"
-echo "${names[@]}"
-# echo ${names[@]:0:2} #0 th index theke shuru hoye 2 ta ke nibe
+# names[${#names[@]}]="Barishal"
+# echo "${names[@]}"
+# # echo ${names[@]:0:2} #0 th index theke shuru hoye 2 ta ke nibe
 
-#to remove an element from array, we use unset
+# #to remove an element from array, we use unset
 
-unset names[1]
-echo "${names[@]}"
+# unset names[1]
+# echo "${names[@]}"
+
+
+#logical operator
+# [[ -r empty-file ]] && echo "You have permission to read"
+
+
+# for loop
+# cloud_providers=("AWS" "GCP" "AZURE")
+# for provider in "${cloud_providers[@]}"; do
+#     echo "${provider}"
+# done
+
+# for file in $(ls *.txt); do
+#    if [[ -r $file ]]; then
+#         echo "You have read permission on ${file}"
+#     fi
+# done
+
+
+#short hand for number counting
+#expend operator
+# for number in {1..10}; do
+#     echo "${number}"
+# done
+
+# C++ structure
+
+# for (( i=0; i<5; i++ )); do
+#     echo $i
+# done
+
+counter=5
+
+# while {condition}; do
+#     #command
+# done
+
+while [[ counter -gt 0 ]]; do
+    echo $counter
+    counter=$((counter-1))
+done
