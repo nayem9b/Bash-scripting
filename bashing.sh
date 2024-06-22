@@ -97,9 +97,42 @@
 #     echo "Foo is younger"
 # fi
 
-read -p "Enter log file: " file
-if [[ $file =~ \.log$ ]]; then
-    echo "valid log file"
-else
-    echo "not valid log file"
-fi
+# #conditonal using regex
+# read -p "Enter log file: " file
+# if [[ $file =~ \.log$ ]]; then
+#     echo "valid log file"
+# else
+#     echo "not valid log file"
+# fi
+
+# case $variable in
+#     pattern1)
+#     #code tobe executed
+#     ;;
+#     pattern2)
+#     #code tobe executed
+#     ;;
+#     *) #default case like else
+#     ;;
+# esac
+
+
+#switch case statement
+echo "1. Show current directory"
+echo "2. Show date"
+echo "Enter other number to exit: "
+
+read variable
+
+case $variable in
+    1)
+    ls
+    ;;
+    2)
+    date
+    ;;
+    *)
+    echo "Invalid choice"
+    exit
+    ;;
+esac
