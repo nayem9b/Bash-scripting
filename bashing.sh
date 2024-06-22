@@ -216,13 +216,22 @@
 #     echo $i
 # done
 
-counter=5
+# counter=5
 
-# while {condition}; do
-#     #command
+# # while {condition}; do
+# #     #command
+# # done
+
+# while [[ counter -gt 0 ]]; do
+#     echo $counter
+#     counter=$((counter-1))
 # done
 
-while [[ counter -gt 0 ]]; do
-    echo $counter
-    counter=$((counter-1))
-done
+claculate_sum(){
+    num1=$1
+    num2=$2
+    sum=$((num1+num2))
+    echo "$sum"
+}
+
+claculate_sum 12 18
