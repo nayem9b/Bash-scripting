@@ -82,8 +82,14 @@
 # fi
 
 #if file has read permission
-if [[ -r foo.txt ]]; then # -s diye empty check kore
-    echo "File has read permission"
+# if [[ -r foo.txt ]]; then # -s diye empty check kore
+#     echo "File has read permission"
+# else
+#     echo "File has no read permission"
+# fi
+
+if [[ foo.txt -nt empty-file ]]; then     #ot means older than #nt means newer than
+    echo "Foo is older"
 else
-    echo "File has no read permission"
+    echo "Foo is younger"
 fi
