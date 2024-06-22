@@ -166,11 +166,22 @@
 # echo $age
 
 names=("Dhaka" "Khulna" "Rangpur" "Sylhet")
-echo ${names[@]}
-names[4]="Rajshahi"
-echo ${names[@]}
+# echo ${names[@]}
+# names[4]="Rajshahi"
+# echo ${names[@]}
 
 
-for name in ${names[@]}; do
-    echo $name
-done
+# for name in ${names[@]}; do
+#     echo $name
+# done
+
+echo ${#names[@]} #length of an array
+
+names[${#names[@]}]="Barishal"
+echo "${names[@]}"
+# echo ${names[@]:0:2} #0 th index theke shuru hoye 2 ta ke nibe
+
+#to remove an element from array, we use unset
+
+unset names[1]
+echo "${names[@]}"
