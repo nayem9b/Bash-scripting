@@ -155,12 +155,22 @@
 # echo "$parent_pid"
 # pwd
 
-age=25
+# age=25
 
-(
-    age=$((age+3))
-    echo $age > age.txt
-)
+# (
+#     age=$((age+3))
+#     echo $age > age.txt
+# )
 
-age=$(cat age.txt)
-echo $age
+# age=$(cat age.txt)
+# echo $age
+
+names=("Dhaka" "Khulna" "Rangpur" "Sylhet")
+echo ${names[@]}
+names[4]="Rajshahi"
+echo ${names[@]}
+
+
+for name in ${names[@]}; do
+    echo $name
+done
