@@ -88,8 +88,18 @@
 #     echo "File has no read permission"
 # fi
 
-if [[ foo.txt -nt empty-file ]]; then     #ot means older than #nt means newer than
-    echo "Foo is older"
+
+
+# older than newer than
+# if [[ foo.txt -nt empty-file ]]; then     #ot means older than #nt means newer than
+#     echo "Foo is older"
+# else
+#     echo "Foo is younger"
+# fi
+
+read -p "Enter log file: " file
+if [[ $file =~ \.log$ ]]; then
+    echo "valid log file"
 else
-    echo "Foo is younger"
+    echo "not valid log file"
 fi
