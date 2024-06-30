@@ -40,3 +40,9 @@ git stash -m "github m1"
 git stash pop --index 1 (( To popout index 1 from stack stash))
 git stash drop --index 1
 git stash branch Nav (( To take the stashed changes into Nav branch))
+
+
+
+**************Git Merge***********
+git rebase && FF Merge (Rebase does a fast forward merge)
+** whereas Merge does a 3 way merge
