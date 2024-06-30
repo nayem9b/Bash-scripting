@@ -22,3 +22,11 @@ git rebase ((
     * Checkout to main and rebase the Branch
     * git push from main
 ))
+
+**************Testing********
+Testing bug fixes in my_cool_branch
+
+**************Testing 2********
+Testing to squash commits into single one
+
+git rebase -i HEAD~2 (To squash last 2 commits)
