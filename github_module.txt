@@ -16,6 +16,7 @@ git remote add nayem9b "origin address"
 git remote remove nayem9b
 
 *************************
+
 git rebase ((
     * Firstly git pull from the main to be insync with the remote master.
     * Checkout to Branch and rebase the main from their
