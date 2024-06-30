@@ -1,0 +1,19 @@
+git github SSH connection
+ssh-keygen -t rsa -b 4096 -C "razwanniam1@gmail.com"  //SSH keygen
+ssh -T git@github.com
+
+********git remote*******
+git fetch origin main
+(git fetch fetches the code but doesnot apply it. 
+I have to manually activate it to reflect its change in the code. Otherwise it will not appear)
+*************************
+git pull origin main
+(pulls the code and automatically apply it, which reflects in the code)
+
+*************************
+git remote add nayem9b "origin address"
+(I can add other origin addressess through this. And push different versions of code in different origins)
+git remote remove nayem9b
+
+*************************
+git 
