@@ -32,8 +32,8 @@ Testing to squash commits into single one
 git rebase -i HEAD~2 (To squash last 2 commits)
 
 
-*************Git Diff************
-git diff to check differences
+*************Git Stash************
+git diff (to check differences)
 git stash list ((To check the stast list))
 git stash pop ((To reassign the stashed content into the head))
 git stash -m "github m1"
