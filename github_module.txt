@@ -30,3 +30,13 @@ Testing bug fixes in my_cool_branch
 Testing to squash commits into single one
 
 git rebase -i HEAD~2 (To squash last 2 commits)
+
+
+*************Git Diff************
+git diff to check differences
+git stash list ((To check the stast list))
+git stash pop ((To reassign the stashed content into the head))
+git stash -m "github m1"
+git stash pop --index 1 (( To popout index 1 from stack stash))
+git stash drop --index 1
+git stash branch Nav (( To take the stashed changes into Nav branch))
