@@ -1,0 +1,6 @@
+systemctl list-units --type=service
+
+systemctl start apache2
+systemctl stop apache2
+systemctl enable myservice
+systemctl disable myservice
