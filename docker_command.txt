@@ -1,0 +1,30 @@
+docker ps (to check all the containers)
+
+sudo systemctl status docker
+
+
+docker run --name my_container-p 7777:80 nginx:latest
+docker container stop w47jf73
+docker pull
+docker exec -it 33au307(container id) bash
+docker logs 669595790cf3(container id) -f (for real time logs)
+docker tag nginx nginx:my_build
+
+
+*************Docker Network*************
+docker network ls
+docker network create --driver bridge devops
+docker Network (
+    bridge
+    host
+    overlay
+    macvlan
+    ipvlan
+    none
+)
+docker inspect bridge
+hostname -I
+
+docker build -t myNodeApp:v1 . (. means the current directory)
+
+docker push <registryname>/<username>/<image-name>:<tag>
