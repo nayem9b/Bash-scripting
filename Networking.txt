@@ -1,0 +1,11 @@
+NAT (Network Adress Translation)
+Router acts as NET: converting private address into public address and vice versa. Because of limited ip addresses Router
+converts private ip to public
+
+**************Default Gateway************
+cmd: netstat -nr
+cmd: ip route
+network == VPC (virtual private cloud)
+Public SUbnet == has internet connection
+NAT alternative = Transit gateway
+Bastion host = Developer Jump Box = Jump from public subnet to private subnet
