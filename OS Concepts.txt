@@ -4,3 +4,8 @@ systemctl start apache2
 systemctl stop apache2
 systemctl enable myservice
 systemctl disable myservice
+
+to check processes: ps -aux // ps -e // pgrep python3
+to check process Tree: pstree
+to check realtime process: top
+to kill process : kill 239823 // kill -9 234522
