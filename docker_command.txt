@@ -1,8 +1,6 @@
 docker ps (to check all the containers)
 
 sudo systemctl status docker
-
-
 docker run --name my_container-p 7777:80 nginx:latest
 sudo docker container ls -a
 docker container stop w47jf73
@@ -30,10 +28,42 @@ docker inspect bridge
 hostname -I
 
 docker build -t myNodeApp:v1 . (. means the current directory)
-
 docker push <registryname>/<username>/<image-name>:<tag>
 docker inspect <container id>
 docker volume ls
+
+********************Docker Volume**************
+sudo docker run -it --rm -v myvolume:/myapp/ <image-id>
+
+
+***********Docker Mount Bind With Volume************
+sudo docker run -it -d --name "sheba_client" -p 3000:3000 -v /media/nayems/Projects/sheba/client:/myapp/ 
+<image-id>
+
+
+host.docker.internal
+
+sudo docker run -it -d --name "sheba_client" -p 3000:3000 -v /media/nayems/Projects/sheba/client:/myapp/ 
+<image-id>
+
+
+
+env Example: sudo docker run -d --env MYSQL_ROOT_PASSWORD="root" --env MYSQL_DATABASE="shebaDatabase" --name mysqldb mysql
+
+To connect between two containers we have to assign two containers in same network. And share each other conatiner names with each other to connect
+sudo docker run -it -d --name "sheba_client2" -p 3001:3000 -v /media/nayems/Projects/sheba/client:/myapp/ --network my_network 2b3b0bab241b
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 FROM ubuntu
