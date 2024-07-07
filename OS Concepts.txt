@@ -5,7 +5,33 @@ systemctl stop apache2
 systemctl enable myservice
 systemctl disable myservice
 
-to check processes: ps -aux // ps -e // pgrep python3
+to check processes: ps -aux // ps -e // pgrep python3 
 to check process Tree: pstree
 to check realtime process: top
 to kill process : kill 239823 // kill -9 234522
+
+piping in Linux is the process of taking the output of one command and using it as the input for command
+
+Linux Text processing commands: uniq, cut, diff, grep
+***************  grep 'git' github_module.txt
+***************  cut -d ':' -f 1 /etc/passwd
+. represents current dir
+~ represents home directory
+
+****************AWK********************
+
+ID Name Salary Country
+1 Nayem 2500 Bangladesh
+2 Islam 4500 Germany
+3 Reshob 3500 India
+4 Rezwan 1500 Pakistan
+
+awk '{print $2}' data   //Here 2 represents the second coloum
+awk '{print $NF}' data // To print the last coloum
+awk '{print NR ": " $0}' data  
+csv= comma separeted values
+awk -f '{print $7} Country.txt'
+awk '{if($3 > 2000) print $2}' data
+awk '{if($2=="Islam"){$3=80000} print $0}' data
+awk '/India/ {print $0}' data
+awk 'NR=="2",NR=="3" {print $0}' data
