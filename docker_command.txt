@@ -55,8 +55,10 @@ sudo docker run -it -d --name "sheba_client2" -p 3001:3000 -v /media/nayems/Proj
 
 
 
-
-
+***********Docker Compose***********
+sudo docker compose up
+sudo docker compose down
+sudo docker-compose run mysqldb
 
 
 
