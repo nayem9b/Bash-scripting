@@ -18,7 +18,7 @@ Components of Master Node:
  * ETCD = key value store, having all cluster data
  * Control Manager = responsible for managing the state of the cluster
 
-Components of Worker Nodes:
+* Components of Worker Nodes:
  * Kubelet = Agent, make sure conatiners running in pods
  * Pod = Container run in a Pod
  * Kube-proxy = Maintains network rules for communication with pods
