@@ -1,0 +1,3 @@
+* Isolated build env
+* Comprehensive tests
+* Monitoring and alerts
