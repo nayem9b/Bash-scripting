@@ -11,13 +11,24 @@ provider "aws" {
   region = "us-east-1"
 }
 
+#Subnet Id
+data "aws_subnet" "name" {
+  filter {
+    name = "vpc-id"
+    values = [data.aws_vpc.name.id]
+  }
+  tags = {
+    Name= "Public Subnet"
+  }
+}
+
 
 #creating ec2 instance
-
 resource "aws_instance" "myserver" {
   ami           = "ami-0fff1b9a61dec8a5f"
   instance_type = "t2.micro"
-  subnet_id = "subnet-0bc37109f2c37cb19"
+  subnet_id = data.aws_subnet.name.id
+  security_groups = [ data.aws_security_group.name.id ]
   tags = {
     Name = "SampleServer"
   }

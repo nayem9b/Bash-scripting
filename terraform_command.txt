@@ -3,3 +3,10 @@ terraform plan
 terraform apply
 terraform destroy
 terraform init -upgrade
+
+
+************Terraform Variables***************
+environment Variables
+terraform.tfvars
+*.auto.tfvars
+-var & -var-file

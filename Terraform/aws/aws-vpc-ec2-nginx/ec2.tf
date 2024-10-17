@@ -9,6 +9,9 @@ resource "aws_instance" "nginxserver" {
   user_data = <<-EOF
             #!/bin/bash
             sudo yum install nginx -y
+            sudo apt update
+            sudo apt upgrade
+            sudo apt-get install -y nodejs
             sudo systemctl start nginx
             EOF
 
