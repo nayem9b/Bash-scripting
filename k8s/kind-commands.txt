@@ -1,0 +1,10 @@
+kind create cluster --name devops
+kubectl cluster-info
+kubectl get nodes
+
+docker exec -it <container id> bash
+ps aux # show auxiliary process
+ kind cleate cluster --name devops --config=cluster.conf
+kind get cluster
+kind delete cluster --name devops
+kubectl describe node <node name>
