@@ -8,3 +8,10 @@ ps aux # show auxiliary process
 kind get cluster
 kind delete cluster --name devops
 kubectl describe node <node name>
+kubectl config get-contexts
+pod = ephimeral
+kubectl config set-context devops --config=cluster.conf
+
+kubectl apply -f pod.yml
+kubectl describe pod <pod name>
+kubectl logs -f <pod name>
