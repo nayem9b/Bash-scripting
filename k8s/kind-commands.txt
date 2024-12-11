@@ -4,7 +4,7 @@ kubectl get nodes
 
 docker exec -it <container id> bash
 ps aux # show auxiliary process
- kind cleate cluster --name devops --config=cluster.conf
+kind cleate cluster --name devops --config=cluster.conf
 kind get cluster
 kind delete cluster --name devops
 kubectl describe node <node name>
@@ -15,3 +15,5 @@ kubectl config set-context devops --config=cluster.conf
 kubectl apply -f pod.yml
 kubectl describe pod <pod name>
 kubectl logs -f <pod name>
+kubectl delete -f pod.yml
+1 pod er vitore 1 ta container ideal
