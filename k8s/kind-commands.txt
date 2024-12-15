@@ -17,3 +17,16 @@ kubectl describe pod <pod name>
 kubectl logs -f <pod name>
 kubectl delete -f pod.yml
 1 pod er vitore 1 ta container ideal
+kubectl get deploy
+kubectl get replicaset
+"first-deploy-8df6bdcfb"-lt6cb this part is the replicaset name
+kubectl rollout undo deployment/<deployment name>
+kubectl rollout history deployment/<deployment name>
+To get the deployment output in yaml 
+    kubectl get deployment first-deploy -o yaml
+*****Namespace 
+    front end in seperate namespace
+    backend in separate namespace
+To get the pods in default namespace
+    kubectl get pods --namespace default
+kubectl config current-context
