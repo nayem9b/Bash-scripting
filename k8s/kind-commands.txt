@@ -4,14 +4,14 @@ kubectl get nodes
 
 docker exec -it <container id> bash
 ps aux # show auxiliary process
-kind cleate cluster --name devops --config=cluster.conf
-kind get cluster
+kind create cluster --name devops --config=cluster.conf
+kind get clusters
 kind delete cluster --name devops
 kubectl describe node <node name>
 kubectl config get-contexts
 pod = ephimeral
 kubectl config set-context devops --config=cluster.conf
-
+kubectl config use-contest <context name>
 kubectl apply -f pod.yml
 kubectl describe pod <pod name>
 kubectl logs -f <pod name>
@@ -30,3 +30,7 @@ To get the deployment output in yaml
 To get the pods in default namespace
     kubectl get pods --namespace default
 kubectl config current-context
+
+kubectl get nodes --show-labels
+kubectl label node <node name> performance=high
+kubectl describe pods

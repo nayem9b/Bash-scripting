@@ -1,7 +1,7 @@
 apiVersion: apps/v1
-metadata: 
-  name: first-deploy
 kind: Deployment
+metadata:
+  name: first-deploy
 spec:
   replicas: 2
   selector:
@@ -12,6 +12,23 @@ spec:
       labels:
         application: nginx
     spec:
+      affinity:
+        nodeAffinity:
+          # requiredDuringSchedulingIgnoredDuringExecution:
+          #   nodeSelectorTerms:
+          #     - matchExpressions:
+          #         - key: performance
+          #           operator: In
+          #           values:
+          #             - low
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: performance
+                    operator: In
+                    values:
+                      - high
       containers:
         - name: nginx
-          image: nginx:1.26
+          image: nginx:latest
