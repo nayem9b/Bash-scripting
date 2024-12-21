@@ -34,3 +34,10 @@ kubectl config current-context
 kubectl get nodes --show-labels
 kubectl label node <node name> performance=high
 kubectl describe pods
+
+Taint/Tolerance
+Taint: key value pairs with condition. Taint is set on Node. It will attract the pod with the matched toleration pod
+Tolerance: Taint ke je tolerant korte parbe, tar dike tene nibe. Toleration is set on pod.
+
+kubectl taint nodes <node name> gpu=true:NoSchedule
+kubectl taint nodes devops-control-plane gpu=true:NoSchedule
