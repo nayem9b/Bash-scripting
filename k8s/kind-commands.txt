@@ -43,3 +43,4 @@ kubectl taint nodes <node name> gpu=true:NoSchedule
 kubectl taint nodes devops-control-plane gpu=true:NoSchedule
 
 DaemonSet creates pod in every node
+kubectl logs -f <pod name>
