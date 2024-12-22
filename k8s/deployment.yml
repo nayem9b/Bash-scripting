@@ -3,7 +3,12 @@ kind: Deployment
 metadata:
   name: first-deploy
 spec:
-  replicas: 2
+  replicas: 4
+  strategy:
+    type: RollingUpdate # Recreate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
   selector:
     matchLabels:
       application: nginx
@@ -13,11 +18,11 @@ spec:
         application: nginx
     spec:
       # nodeName: devops-control-plane
-      tolerations:
-        - key: "gpu"
-          operator: "Equal"
-          value: "true"
-          effect: "NoSchedule"
+      # tolerations:
+      #   - key: "gpu"
+      #     operator: "Equal"
+      #     value: "true"
+      #     effect: "NoSchedule"
       # affinity:
       #   nodeAffinity:
       #     requiredDuringSchedulingIgnoredDuringExecution:
@@ -37,4 +42,4 @@ spec:
           #             - high
       containers:
         - name: nginx
-          image: nginx:latest
+          image: nginx:1.27.2

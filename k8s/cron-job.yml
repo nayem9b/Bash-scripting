@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: super-important-cron-job
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      ttlSecondsAfterFinished: 60
+      backoffLimit: 4
+      template:
+        metadata:
+          labels:
+            application: busybox
+        spec:
+          containers:
+            - name: busybox
+              image: busybox:latest
+              command:
+                - echooooo
+                - "Hello, Kubernetes!"
+          restartPolicy: OnFailure

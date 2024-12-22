@@ -44,3 +44,6 @@ kubectl taint nodes devops-control-plane gpu=true:NoSchedule
 
 DaemonSet creates pod in every node
 kubectl logs -f <pod name>
+kubectl get cronjobs
+kubectl get jobs
+kubectl port-forward pod/<pod name> port-that_I_want_in_my_machine:port_of_the_container
