@@ -12,29 +12,29 @@ spec:
       labels:
         application: nginx
     spec:
-      nodeName: devops-control-plane
-      # tolerations:
-      #   - key: "gpu"
-      #     operator: "Equal"
-      #     value: "true"
-      #     effect: "NoSchedule"
+      # nodeName: devops-control-plane
+      tolerations:
+        - key: "gpu"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       # affinity:
       #   nodeAffinity:
-      #     # requiredDuringSchedulingIgnoredDuringExecution:
-      #     #   nodeSelectorTerms:
-      #     #     - matchExpressions:
-      #     #         - key: performance
-      #     #           operator: In
-      #     #           values:
-      #     #             - low
-      #     preferredDuringSchedulingIgnoredDuringExecution:
-      #       - weight: 1
-      #         preference:
-      #           matchExpressions:
+      #     requiredDuringSchedulingIgnoredDuringExecution:
+      #       nodeSelectorTerms:
+      #         - matchExpressions:
       #             - key: performance
       #               operator: In
       #               values:
       #                 - high
+          # preferredDuringSchedulingIgnoredDuringExecution:
+          #   - weight: 1
+          #     preference:
+          #       matchExpressions:
+          #         - key: performance
+          #           operator: In
+          #           values:
+          #             - high
       containers:
         - name: nginx
           image: nginx:latest
