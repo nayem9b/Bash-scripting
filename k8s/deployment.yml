@@ -3,26 +3,22 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  selector:
+  selector:   #which application has to select/which pod has to select
    application: nginx
   ports:
-   - protocol: TCP
+   - name: http-port-01
      port: 80
-     targetPort: 80
-
-
-
-
-
-
-
-
-
-
+     targetPort: 80 #target port of container
+   - name: http-port-02
+     port: 8085
+     targetPort: http #target port of container
 
 
 
 ---
+
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -68,3 +64,6 @@ spec:
       containers:
         - name: nginx
           image: nginx:1.27.2
+          ports:
+            - name: http
+              containerPort: 80

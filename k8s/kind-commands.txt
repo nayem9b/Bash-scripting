@@ -25,7 +25,7 @@ kubectl rollout history deployment/<deployment name>
 To get the deployment output in yaml 
     kubectl get deployment first-deploy -o yaml
 *****Namespace 
-    front end in seperate namespace
+    port
     backend in separate namespace
 To get the pods in default namespace
     kubectl get pods --namespace default
@@ -48,3 +48,15 @@ kubectl get cronjobs
 kubectl get jobs
 kubectl port-forward pod/<pod name> port-that_I_want_in_my_machine:port_of_the_container
 kubectl port-forward deploy/<deploy name> port-that_I_want_in_my_machine:port_of_the_container
+
+Multiple containers in a same pod share the same network. So overlapping ports are not allowed
+kubectl get services
+kubectl get svc
+kubectl describe endpointslice <service name>
+kubectl port-forward svc/<service name> port-that_I_want_in_my_machine:port_of_the_containers -n (namespace name) default
+kubectl logs -f deploy/<deploy name>
+
+
+Services are of 3 types:
+1. Cluster Ip Service
+2. Node Port
