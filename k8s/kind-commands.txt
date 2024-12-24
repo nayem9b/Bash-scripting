@@ -55,8 +55,18 @@ kubectl get svc
 kubectl describe endpointslice <service name>
 kubectl port-forward svc/<service name> port-that_I_want_in_my_machine:port_of_the_containers -n (namespace name) default
 kubectl logs -f deploy/<deploy name>
-
+kubectl get endpointslice
 
 Services are of 3 types:
 1. Cluster Ip Service
 2. Node Port
+3. Load Balancer
+1->2->3 are superset 
+NodePort Range 30000-32767
+
+path Types:
+ImplementationSpecific, Exact, Prefix
+
+kubectl get ingress
+Namespace: process and network ke alada korar jonno use kora hoy.
+kubectl get ingressclasses
