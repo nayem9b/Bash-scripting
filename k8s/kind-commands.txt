@@ -81,3 +81,11 @@ Probe: Investigate the condition of container(s) of a pod
         - pod startup howar somoy kaj kore
         - ensures that probe has properly started
 kubectl exec -it <pod name> sh
+
+
+configmap
+    - stores the configuration which are not non-confidential
+kubectl explain configmap
+printenv
+export NAME=devops
+    - to save a file as an ENV variable

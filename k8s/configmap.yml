@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-configmap
+data:
+  ENV: "development"
+  DB_URL: "my_devops_learning.com"
+  config.json:
+  {
+   "ENV": "development",
+   "DB_URL": "my_devops_learning.com"
+  }
+  app.properties:
+    background_color = green
+    ram = 4GB
+    cpu = "c core"
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configmap-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      application: nginx
+  template:
+    metadata:
+      labels:
+        application: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27.2
+          ports:
+            - name: http
+              containerPort: 80
+          env:
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: my-configmap
+                  key: DB_URL
+
+          volumeMounts:
+            - name: config-volume
+              mountPath: "/app"
+      volumes:
+        - name: config-volume
+          configMap:
+            name: my-configmap
+            items:
+              - key: config.json
+                path: config.json
