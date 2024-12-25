@@ -76,4 +76,8 @@ Probe: Investigate the condition of container(s) of a pod
     - Liveness Probe
         - when liveness probe fails. It restarts the container
     - Readiness Probe
+        - if a file or folder or process is ready then it executes
     - Startup Probe
+        - pod startup howar somoy kaj kore
+        - ensures that probe has properly started
+kubectl exec -it <pod name> sh
