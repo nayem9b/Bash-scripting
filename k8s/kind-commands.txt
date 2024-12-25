@@ -70,3 +70,10 @@ ImplementationSpecific, Exact, Prefix
 kubectl get ingress
 Namespace: process and network ke alada korar jonno use kora hoy.
 kubectl get ingressclasses
+
+
+Probe: Investigate the condition of container(s) of a pod
+    - Liveness Probe
+        - when liveness probe fails. It restarts the container
+    - Readiness Probe
+    - Startup Probe

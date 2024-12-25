@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: probe-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      application: nginx
+  template:
+    metadata:
+      labels:
+        application: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27.2
+          ports:
+            - name: http
+              containerPort: 80
+          # livenessProbe:
+          #   httpGet:
+          #     path: /cdbbd
+          #     port: http
+          #   initialDelaySeconds: 15
+          #   periodSeconds: 10
+          #   failureThreshold: 5
+          #   successThreshold: 1
+          #   terminationGracePeriodSeconds: 30
+          readinessProbe:
+            # httpGet:
+            #   path: /healthz
+            #   port: http
+            exec:
+              command: 
+              - cat
+              - /tmp/hehehe
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
