@@ -89,3 +89,5 @@ kubectl explain configmap
 printenv
 export NAME=devops
     - to save a file as an ENV variable
+echo "Nayem" | base64
+kubectl get secrets

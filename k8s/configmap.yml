@@ -5,15 +5,15 @@ metadata:
 data:
   ENV: "development"
   DB_URL: "my_devops_learning.com"
-  config.json:
-  {
-   "ENV": "development",
-   "DB_URL": "my_devops_learning.com"
-  }
-  app.properties:
-    background_color = green
-    ram = 4GB
-    cpu = "c core"
+  config.json: |
+    {
+      "ENV": "development",
+      "DB_URL": "my_devops_learning.com"
+    }
+  app.properties: |
+    background_color=green
+    ram=4GB
+    cpu="c core"
 
 ---
 
@@ -46,7 +46,7 @@ spec:
 
           volumeMounts:
             - name: config-volume
-              mountPath: "/app"
+              mountPath: "/appConfig"
       volumes:
         - name: config-volume
           configMap:
