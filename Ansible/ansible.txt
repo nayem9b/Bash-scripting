@@ -1,0 +1,5 @@
+ansible = configuration as a code
+follows agentless architecture
+ansible - idempotent
+ansible instructions
+ansible-

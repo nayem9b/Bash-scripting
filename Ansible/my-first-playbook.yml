@@ -1,0 +1,26 @@
+- name: Basic Playbook
+  hosts: localhost
+  tasks:
+    - name: Create a directory
+      file:
+        path: /tmp/testdir
+        state: directory
+        mode: '0644'
+
+    - name: Create a file in the directory
+      file:
+        path: /tmp/testdir/testfile.txt
+        state: touch
+    - name : Update package manager file
+      apt:
+        update_cache: yes
+        become: true
+    - name : Ensure multiple packages are installed
+      apt:
+        name:
+          - nginx
+          - git
+          - curl
+        state: present
+    - name : check current director
+      command: ls
