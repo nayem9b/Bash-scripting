@@ -1,5 +1,6 @@
 ansible = configuration as a code
 follows agentless architecture
-ansible - idempotent
+ansible is idempotent. It does not know about the previous state
 ansible instructions
-ansible-
+
+ansible-playbook playbook.yml --ask-become-pass
