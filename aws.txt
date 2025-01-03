@@ -1,3 +1,9 @@
 *******************CLI Commands**************
 aws iam list-users
 source .env
+
+ssh -i ./Public-Machine-key.pem ec2-user@54.90.158.165  
+cat ~/.ssh/authorized_keys
+cat /etc/ssh/ssh_config
+
+ansible-config init --disabled > ansible.cfg

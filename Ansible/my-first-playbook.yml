@@ -1,5 +1,5 @@
 - name: Basic Playbook
-  hosts: localhost # can be other hosts
+  hosts: jenkins # can be other hosts #all
   become: true # to run as root
   tasks:
     - name: Create a directory
