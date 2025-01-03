@@ -8,3 +8,6 @@ ansible-playbook playbook.yml --ask-become-pass
 ansible-playbook -e ansible_user=nayem playbook.yml --ask-become-pass #to pass a env to the agent
 ansible-playbook -i inventory -e ansible_user=nayem playbook.yml --ask-become-pass #to pass the inventory
 for task seperation we use role
+
+
+variable precedence
