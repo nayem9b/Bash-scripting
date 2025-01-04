@@ -9,6 +9,13 @@ ansible-playbook -e ansible_user=nayem playbook.yml --ask-become-pass #to pass a
 ansible-playbook -i inventory -e ansible_user=nayem playbook.yml --ask-become-pass #to pass the inventory
 for task seperation we use role
 
+ansible-config init --disabled > ansible.cfg 
 
 variable precedence
+1. command line arguments
+2. environment variables
+3. ansible.cfg
+4. inventory
+5. group_vars
+6. host_vars
 ansible-galaxy init roles/docker
