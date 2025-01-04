@@ -35,3 +35,7 @@ awk '{if($3 > 2000) print $2}' data
 awk '{if($2=="Islam"){$3=80000} print $0}' data
 awk '/India/ {print $0}' data
 awk 'NR=="2",NR=="3" {print $0}' data
+
+echo $PATH
+sudo su root
+uname -m

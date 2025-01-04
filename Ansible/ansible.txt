@@ -18,4 +18,15 @@ variable precedence
 4. inventory
 5. group_vars
 6. host_vars
+
+
 ansible-galaxy init roles/docker
+
+ansible cfg config
+roles_path
+library
+remote_user
+
+the meta.yml file in the role is used to check dependencies. If it is not present, it executes the dependency role first
+
+handlers.yml is used to restart the instance 
